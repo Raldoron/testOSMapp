@@ -77,7 +77,7 @@ public class NavigationDrawerInit {
                         }
                         */
                         if (drawerItem.getIdentifier() == 3) {
-                            Intent i = new Intent(context, Ontology.class);
+                            Intent i = new Intent(context, OntologyActivity.class);
                             activity.startActivity(i);
                         }
 
@@ -141,7 +141,7 @@ public class NavigationDrawerInit {
                         }
                         */
                         if (drawerItem.getIdentifier() == 3) {
-                            Intent i = new Intent(context, Ontology.class);
+                            Intent i = new Intent(context, OntologyActivity.class);
                             activity.startActivity(i);
                         }
 

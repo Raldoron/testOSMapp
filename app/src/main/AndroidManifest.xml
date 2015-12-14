@@ -33,13 +33,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Ontology"
-            android:label="@string/drawer_item_ontology"
-            android:parentActivityName=".MapActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MapActivity"/>
-        </activity>
+        <activity android:name=".OntologyActivity"
+            android:label="@string/drawer_item_ontology" />
 
     </application>
 

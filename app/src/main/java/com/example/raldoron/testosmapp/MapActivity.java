@@ -1,39 +1,26 @@
 package com.example.raldoron.testosmapp;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.mikepenz.iconics.typeface.FontAwesome;
 import com.mikepenz.materialdrawer.Drawer;
-import com.mikepenz.materialdrawer.model.DividerDrawerItem;
-import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
-import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
-import com.mikepenz.materialdrawer.model.SectionDrawerItem;
-import com.mikepenz.materialdrawer.model.interfaces.Badgeable;
-import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
-import com.mikepenz.materialdrawer.model.interfaces.Nameable;
 
 import org.osmdroid.api.IMapController;
 import org.osmdroid.bonuspack.clustering.RadiusMarkerClusterer;
-import org.osmdroid.bonuspack.location.NominatimPOIProvider;
-import org.osmdroid.bonuspack.location.POI;
 import org.osmdroid.bonuspack.overlays.FolderOverlay;
 import org.osmdroid.bonuspack.overlays.MapEventsOverlay;
 import org.osmdroid.bonuspack.overlays.MapEventsReceiver;
@@ -44,14 +31,10 @@ import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider;
 import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay;
 import org.osmdroid.bonuspack.overlays.Marker;
 
-import java.util.ArrayList;
-
-import oauth.signpost.OAuth;
-
 /**
  * Created by Raldoron on 05.11.15.
  */
-public class MapActivity extends ActionBarActivity implements  MapEventsReceiver {
+public class MapActivity extends BaseActivity implements  MapEventsReceiver {
 
     private static MyLocationNewOverlay myLocationNewOverlay;
     RadiusMarkerClusterer radiusMarkerClusterer;
@@ -70,11 +53,6 @@ public class MapActivity extends ActionBarActivity implements  MapEventsReceiver
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.map_activity);
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
 
         mapView = (MapView) findViewById(R.id.map);
         mapView.setTileSource(TileSourceFactory.MAPNIK);
@@ -128,7 +106,7 @@ public class MapActivity extends ActionBarActivity implements  MapEventsReceiver
         testButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), Ontology.class);
+                Intent i = new Intent(MapActivity.this, OntologyActivity.class);
                 startActivity(i);
             }
         });
