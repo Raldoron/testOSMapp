@@ -1,4 +1,4 @@
-package com.example.raldoron.testosmapp;
+package com.example.raldoron.testosmapp.AddPOI;
 
 import android.content.SharedPreferences;
 

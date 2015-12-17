@@ -14,5 +14,14 @@
         android:textColor="@android:color/black"
         android:layout_gravity="center_horizontal" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Request result"
+        android:textColor="@color/black_semi_transparent"
+        android:textSize="40dp"
+        android:id="@+id/resultTextView"
+        android:layout_gravity="center_horizontal" />
+
 
 </LinearLayout>

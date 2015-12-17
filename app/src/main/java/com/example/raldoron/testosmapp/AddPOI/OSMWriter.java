@@ -1,4 +1,6 @@
-package com.example.raldoron.testosmapp;
+package com.example.raldoron.testosmapp.AddPOI;
+
+import com.example.raldoron.testosmapp.Constants;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;

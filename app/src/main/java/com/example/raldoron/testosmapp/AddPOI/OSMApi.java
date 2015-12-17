@@ -1,6 +1,8 @@
-package com.example.raldoron.testosmapp;
+package com.example.raldoron.testosmapp.AddPOI;
 
 import android.util.Log;
+
+import com.example.raldoron.testosmapp.Constants;
 
 import java.io.BufferedWriter;
 import java.io.OutputStream;

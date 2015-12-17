@@ -1,4 +1,4 @@
-package com.example.raldoron.testosmapp;
+package com.example.raldoron.testosmapp.AddPOI;
 
 /**
  * Created by Raldoron on 02.12.15.
