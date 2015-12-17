@@ -21,7 +21,7 @@ public class Constants {
     public static final String OSM_CREATOR_INFO = "Raldoron testOSMapp";
 
     public static final int RequestCode = 913;
-    public static final String TaginfoAPI_URI = "http://taginfo.openstreetmap.org/api/4/key/values?key=highway&page=1&rp=10&sortname=count_ways&sortorder=desc";
+    public static final String TaginfoAPI_URI = "http://taginfo.openstreetmap.org/api/4";
 
 
 }

@@ -3,14 +3,28 @@ package com.example.raldoron.testosmapp;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.squareup.okhttp.Response;
+
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.util.List;
+
+import retrofit.Call;
+import retrofit.Callback;
+import retrofit.GsonConverterFactory;
+import retrofit.Retrofit;
 
 /**
  * Created by Raldoron on 07.12.15.
  */
 public class OntologyActivity extends BaseActivity {
 
+    final String TAG = getClass().getName();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,5 +33,39 @@ public class OntologyActivity extends BaseActivity {
         Toast.makeText(getApplicationContext(), "Ontology", Toast.LENGTH_LONG);
 
         TextView resTextView = (TextView) findViewById(R.id.resultTextView);
+
+        Retrofit retrofit = new Retrofit.Builder().
+                baseUrl(Constants.TaginfoAPI_URI).
+                addConverterFactory(GsonConverterFactory.create()).
+                build();
+        //  /api/4/key/values?key=highway&page=1&rp=10&sortname=count_ways&sortorder=desc
+
+        TagInfoAPI tagInfoAPI = retrofit.create(TagInfoAPI.class);
+        /*
+        Call<List<TagOSM>> call = tagInfoAPI.getValuesForKey("highway", 1, 10, "count_way", "desc");
+        try {
+            List<TagOSM> tagOSMs = call.execute().body();
+            for (TagOSM tagOSM : tagOSMs){
+                Log.d(TAG, tagOSM.value);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        */
+
+        tagInfoAPI.getValuesForKey("highway", 1, 10, "count_way", "desc", new Callback<Response>() {
+            @Override
+            public void onResponse(retrofit.Response<Response> response, Retrofit retrofit) {
+                String res = response.toString();
+                System.out.println(res);
+            }
+
+            @Override
+            public void onFailure(Throwable t) {
+
+            }
+        });
+
     }
+
 }
