@@ -7,11 +7,15 @@ import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
 import com.squareup.okhttp.Response;
 
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.util.List;
 
 import retrofit.Call;
@@ -34,13 +38,29 @@ public class OntologyActivity extends BaseActivity {
 
         TextView resTextView = (TextView) findViewById(R.id.resultTextView);
 
+        final Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
         Retrofit retrofit = new Retrofit.Builder().
                 baseUrl(Constants.TaginfoAPI_URI).
-                addConverterFactory(GsonConverterFactory.create()).
+                addConverterFactory(GsonConverterFactory.create(gson)).
                 build();
         //  /api/4/key/values?key=highway&page=1&rp=10&sortname=count_ways&sortorder=desc
 
         TagInfoAPI tagInfoAPI = retrofit.create(TagInfoAPI.class);
+        Call<TagOSM> call = tagInfoAPI.getValuesForKey("highway", 1, 10, "count_ways", "desc");
+        call.enqueue(new Callback<TagOSM>() {
+            @Override
+            public void onResponse(retrofit.Response<TagOSM> response, Retrofit retrofit) {
+                Log.d("CallBack", " response is " + response.message());
+                Log.d("CallBack", response.body().toString());
+                Log.d("CallBack", response.raw().body().toString());
+            }
+
+            @Override
+            public void onFailure(Throwable t) {
+                Log.d("CallBack", " Throwable is " +t);
+            }
+        });
         /*
         Call<List<TagOSM>> call = tagInfoAPI.getValuesForKey("highway", 1, 10, "count_way", "desc");
         try {
@@ -52,7 +72,7 @@ public class OntologyActivity extends BaseActivity {
             e.printStackTrace();
         }
         */
-
+        /*
         tagInfoAPI.getValuesForKey("highway", 1, 10, "count_way", "desc", new Callback<Response>() {
             @Override
             public void onResponse(retrofit.Response<Response> response, Retrofit retrofit) {
@@ -65,6 +85,7 @@ public class OntologyActivity extends BaseActivity {
 
             }
         });
+        */
 
     }
 
