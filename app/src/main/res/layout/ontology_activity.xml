@@ -5,22 +5,32 @@
     android:layout_height="match_parent">
 
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Ontology"
-        android:id="@+id/textView"
-        android:textColor="@android:color/black"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Request result"
-        android:textColor="@color/black_semi_transparent"
-        android:textSize="40dp"
-        android:id="@+id/resultTextView"
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Enter key for search"
+            android:textColorHint="@android:color/black"
+            android:textColor="@android:color/black"
+            android:id="@+id/valueSearchTextView"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:id="@+id/valueSearchButton" />
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/listView"
         android:layout_gravity="center_horizontal" />
 
 

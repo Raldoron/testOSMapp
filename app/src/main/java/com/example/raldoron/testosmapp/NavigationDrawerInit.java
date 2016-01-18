@@ -42,7 +42,7 @@ public class NavigationDrawerInit {
                 .addDrawerItems(
                         new PrimaryDrawerItem().withName(R.string.drawer_item_login).withIcon(FontAwesome.Icon.faw_user).withIdentifier(1),
                         new PrimaryDrawerItem().withName(R.string.drawer_item_addPOI).withIcon(FontAwesome.Icon.faw_edit).withIdentifier(2),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_ontology).withIcon(FontAwesome.Icon.faw_eye).withIdentifier(3),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_tagSearch).withIcon(FontAwesome.Icon.faw_eye).withIdentifier(3),
                         new SectionDrawerItem().withName(R.string.drawer_item_settings),
                         new SecondaryDrawerItem().withName(R.string.drawer_item_help).withIcon(FontAwesome.Icon.faw_cog),
                         new SecondaryDrawerItem().withName(R.string.drawer_item_open_source).withIcon(FontAwesome.Icon.faw_question).setEnabled(false),
@@ -106,7 +106,7 @@ public class NavigationDrawerInit {
                 .addDrawerItems(
                         new PrimaryDrawerItem().withName(R.string.drawer_item_sign_out).withIcon(FontAwesome.Icon.faw_user).withIdentifier(1),
                         new PrimaryDrawerItem().withName(R.string.drawer_item_addPOI).withIcon(FontAwesome.Icon.faw_edit).withIdentifier(2),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_ontology).withIcon(FontAwesome.Icon.faw_eye).withIdentifier(3),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_tagSearch).withIcon(FontAwesome.Icon.faw_eye).withIdentifier(3),
                         new SectionDrawerItem().withName(R.string.drawer_item_settings),
                         new SecondaryDrawerItem().withName(R.string.drawer_item_help).withIcon(FontAwesome.Icon.faw_cog),
                         new SecondaryDrawerItem().withName(R.string.drawer_item_open_source).withIcon(FontAwesome.Icon.faw_question).setEnabled(false),

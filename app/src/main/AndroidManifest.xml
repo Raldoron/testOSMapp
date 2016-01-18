@@ -39,12 +39,19 @@
         <activity
             android:name=".OntologyActivity"
             android:parentActivityName=".MapActivity"
-            android:label="@string/drawer_item_ontology">
+            android:label="@string/drawer_item_tagSearch">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MapActivity"/>
         </activity>
-
+        <activity
+            android:name=".TagInfo.TagActivity"
+            android:parentActivityName=".OntologyActivity"
+            android:label="@string/drawer_item_tagInfo">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".OntologyActivity"/>
+        </activity>
 
     </application>
 

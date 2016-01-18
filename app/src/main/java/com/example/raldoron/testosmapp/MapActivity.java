@@ -100,14 +100,7 @@ public class MapActivity extends BaseActivity implements  MapEventsReceiver {
             }
         });
 
-        Button testButton = (Button) findViewById(R.id.button);
-        testButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(MapActivity.this, OntologyActivity.class);
-                startActivity(i);
-            }
-        });
+
         //check user authorisation
         CheckAuthorisation checkAuthorisation = new CheckAuthorisation(this);
         //checkAuthorisation.check();

@@ -12,8 +12,6 @@
         android:layout_height="match_parent"
         android:layout_alignStart="@+id/searchBar"
         android:layout_alignLeft="@+id/searchBar"
-        android:layout_alignRight="@+id/floating_btn_wrapper"
-        android:layout_alignEnd="@+id/floating_btn_wrapper"
         android:layout_below="@+id/toolbar"
         android:layout_alignParentBottom="true" />
 
@@ -26,6 +24,8 @@
         <AutoCompleteTextView
             android:id="@+id/poiTag"
             android:hint="feature"
+            android:textColorHint="@android:color/black"
+            android:textColor="@android:color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -40,50 +40,6 @@
             android:layout_gravity="right" />
     </LinearLayout>
 
-    <RelativeLayout
-        android:id="@id/floating_btn_wrapper"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true">
-
-        <com.getbase.floatingactionbutton.FloatingActionsMenu
-            android:id="@+id/famenu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginStart="16dp"
-            fab:fab_addButtonColorNormal="@color/white"
-            fab:fab_addButtonColorPressed="@color/white_pressed"
-            fab:fab_addButtonPlusIconColor="@color/half_black"
-            fab:fab_labelsPosition="right">
-            <com.getbase.floatingactionbutton.FloatingActionButton
-                android:id="@+id/testfab"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                fab:fab_colorNormal="@color/white"
-                fab:fab_title="Label on the right"
-                fab:fab_colorPressed="@color/white_pressed"/>
-
-            <com.getbase.floatingactionbutton.FloatingActionButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                fab:fab_colorNormal="@color/white"
-                fab:fab_size="mini"
-                fab:fab_title="Another one on the right"
-                fab:fab_colorPressed="@color/white_pressed"/>
-        </com.getbase.floatingactionbutton.FloatingActionsMenu>
-    </RelativeLayout>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="test"
-        android:id="@+id/button"
-        android:layout_below="@id/searchBar"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>
